@@ -2,34 +2,18 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>🔊 Включить звук на всю</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: sans-serif;
-    }
-    button {
-      font-size: 1.2rem;
-      padding: 1rem 2rem;
-      cursor: pointer;
-    }
-  </style>
+  <title>🔊 Звук автоматически</title>
 </head>
 <body>
-  <button id="playBtn">БОДЯ БИЧ А ТЫ ТЫКАЙ</button>
-  <audio id="myAudio" src="bodya.mp3"></audio>
+  <audio id="myAudio" src="bodya.mp3" autoplay></audio>
 
   <script>
-    document.getElementById('playBtn').addEventListener('click', () => {
-      const audio = document.getElementById('myAudio');
-      audio.volume = 1.0;       // выставляем максимальную громкость
-      audio.play().catch(err => {
-        alert('Не удалось воспроизвести звук: ' + err);
-      });
+    const audio = document.getElementById('myAudio');
+    audio.volume = 1.0;
+
+    // Пробуем сразу запустить
+    audio.play().catch(err => {
+      console.warn('Автовоспроизведение не разрешено браузером:', err);
     });
   </script>
 </body>
