@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>🔊 Звук автоматически</title>
+</head>
+<body>
+  <audio id="myAudio" src="bodya.mp3" autoplay></audio>
+
+  <script>
+    const audio = document.getElementById('myAudio');
+    audio.volume = 1.0;
+
+    // Пробуем сразу запустить
+    audio.play().catch(err => {
+      console.warn('Автовоспроизведение не разрешено браузером:', err);
+    });
+  </script>
+</body>
+</html>
